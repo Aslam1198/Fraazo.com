@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .nav-container {
+            width: 100%;
+            height: 80px;
+            display: flex;
+            position: sticky;
+            position: fixed;
+            z-index: 1;
+            overflow: hidden;
+            background-color: white;
+        }
+        
+        .logo {
+            width: 19%;
+            height: 100%;
+        }
+        
+        .logo>img {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .locat {
+            width: 10%;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            font-size: 13px;
+            color: #999999;
+            font-family: sans-serif;
+        }
+        
+        .locat:hover {
+            color: black;
+        }
+        
+        .search {
+            width: 40%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .button {
+            width: 80%;
+            height: 50px;
+            border-radius: 30px;
+        }
+        
+        .bag {
+            width: 10%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            color: #999999;
+            font-family: sans-serif;
+        }
+        
+        .bag:hover {
+            color: black;
+        }
+        
+        .sign {
+            width: 10%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            color: #999999;
+            font-family: sans-serif;
+        }
+        
+        .sign:hover {
+            color: black;
+        }
+        
+        .card {
+            width: 10%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            color: #999999;
+            font-family: sans-serif;
+        }
+        
+        .card:hover {
+            color: black;
+        }
+        
+        .extraspace {
+            height: 8rem;
+            width: 100%;
+        }
+        /*-----------------------------------------------------------------------------------------------------------------------------*/
+        
+        hr {
+            background-color: grey;
+        }
+        
+        #container {
+            width: 32%;
+            text-align: center;
+            justify-content: center;
+            background-color: #f7f2e5;
+            padding: 20px;
+            color: rgb(48, 30, 6);
+            font-size: 25px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin: auto;
+            border-radius: 10px;
+        }
+        
+        input {
+            width: 80%;
+            height: 40px;
+            text-align: center;
+        }
+        
+        #submit {
+            width: 150px;
+            height: 40px;
+            background-color: #4fbb90;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!---------------------------navbar------------------------------------------------>
+
+    <div class="nav-container">
+        <div class="logo">
+            <img src="https://static.startuptalky.com/2020/05/fraazo-logo-startuptalky.jpg" alt="" class="main_logo">
+        </div>
+        <div class="locat">
+            <i class="fa-solid fa-location-dot">
+                </i>pawai
+        </div>
+        <div class="search">
+            <input type="text" class="button" placeholder="Find fresh vegetables,Fruits and Dairy.">
+        </div>
+        <div class="card">
+            <i class="fa-solid fa-credit-card-front"></i>Credit
+        </div>
+        <div class="bag">
+            <a href="addcart.html"><i class="fa-solid fa-cart-shopping"></i>Cart</a>
+
+
+        </div>
+        <div class="sign">
+            <a href="sign-up.html"> <i class="fa-solid fa-user"></i>Sign</a>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="extraspace"></div>
+
+    <div id="container">
+
+        <form>
+            <h3>OTP verification</h3>
+            <p>OTP for the transaction bearing Card Details XXXX XXXX 1234 has been sent to the registered mobile mobile number XXXXXXX0787.</p>
+            <input class="otp" placeholder="Enter OTP">
+            <br> <br>
+            <input id="submit" type="submit" placeholder="Proceed To Payment">
+        </form>
+        <div>
+            <p>Havent Received Click here</p>
+            <a href="otp.html">Resend</a>
+        </div>
+
+
+
+    </div>
+
+</body>
+
+</html>
+<script>
+    document.querySelector("form").addEventListener("submit", proceed);
+
+    function proceed(event) {
+        event.preventDefault();
+        var otp = document.querySelector(".otp").value;
+        console.log(otp);
+        if (otp.length === "0" || otp !== "1234") {
+            alert("Incorrect OTP");
+        } else {
+            alert("Verifying Payment");
+            window.location.href = "sucess.html";
+        }
+    }
+</script>

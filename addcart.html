@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/343ca72674.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+        #crtdiv {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 100%;
+            height: 50px;
+            font-size: 25px;
+            border: 1px solid grey;
+            padding-left: 20px;
+        }
+        
+        table,
+        td,
+        th {
+            height: 50px;
+            text-align: center;
+            color: gray;
+        }
+        /* .a102{
+            margin-left: 40px;
+        } */
+        
+        .a103 {
+            padding-right: 100px;
+        }
+        
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            border: 1px solid gainsboro;
+            border-left: none;
+            border-right: none;
+        }
+        /*------------------------------------for cart-------------------------------------*/
+        
+        #main3 {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-gap: 20px;
+            grid-template-areas: "n n n n n n n n n a a a";
+            font-size: 20px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: bolder;
+        }
+        
+        #flex {
+            display: flex;
+            margin-bottom: 25px;
+            margin-left: 40px;
+            padding: 0px;
+            border: 1px solid rgb(214, 209, 209);
+        }
+        
+        .cart {
+            grid-area: a;
+            /* background-color: white; */
+            padding: 10px;
+            height: 450px;
+            width: 400px;
+            border: 1px solid rgb(114, 56, 56);
+            margin-right: 20px;
+        }
+        
+        #container {
+            grid-area: n;
+            display: grid;
+            background-color: white;
+            /* margin-top: 10px; */
+            font-weight: normal;
+            font-size: 20px;
+        }
+        
+        #container>div {
+            width: 70%;
+            height: 350px;
+            display: flex;
+            height: 150px;
+        }
+        
+        .cart>div {
+            display: flex;
+            justify-content: space-around;
+        }
+        
+        button {
+            height: 50px;
+            width: 250px;
+            justify-self: center;
+            background-color: #165241;
+            border: 0;
+            align-items: center;
+            text-align: center;
+            color: white;
+            font-size: 20px;
+            margin-left: 65px;
+            margin-top: 50px;
+            border-radius: 30px;
+        }
+        
+        #inp {
+            height: 35px;
+            margin-left: 40px;
+            margin-top: 40px;
+            border: 1px solid gray;
+            background-color: white;
+            font-size: 15px;
+            text-align: center;
+            font-weight: bolder;
+        }
+        
+        #inpsub {
+            height: 35px;
+            width: 80px;
+            margin-left: 20px;
+            margin-top: 40px;
+            border: 1px solid grey;
+            background-color: whitesmoke;
+            color: black;
+        }
+        
+        #id1 {
+            width: 20%;
+            font-weight: normal;
+        }
+        
+        #id2 {
+            margin-top: 10px;
+            width: 50%;
+            font-weight: normal;
+        }
+        
+        #id3 {
+            margin-top: 10px;
+            text-align: center;
+            margin-left: 33px;
+        }
+        
+        img {
+            width: 150px;
+            height: 150px;
+        }
+        
+        p {
+            text-align: center;
+            /* font-weight: bold; */
+            font-size: 15px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: rgb(31, 30, 30);
+        }
+        
+        #id3>p:nth-child(1) {
+            text-decoration: line-through;
+            color: grey;
+            /* margin-right: 50px; */
+        }
+        
+        #crtdiv>h2 {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0%;
+            padding: 0%;
+        }
+        
+        .same-phont {
+            margin: 30px;
+        }
+        
+        #offer {
+            color: red;
+            font-weight: bolder;
+            font-size: 30px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin: 0%;
+        }
+        
+        .nav-container {
+            width: 100%;
+            height: 80px;
+            display: flex;
+            position: sticky;
+            position: fixed;
+            z-index: 1;
+            overflow: hidden;
+            background-color: white;
+        }
+        
+        .logo {
+            width: 19%;
+            height: 100%;
+        }
+        
+        .logo>img {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .locat {
+            width: 10%;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            font-size: 13px;
+            color: #999999;
+            font-family: sans-serif;
+        }
+        
+        .locat:hover {
+            color: black;
+        }
+        
+        .search {
+            width: 40%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .button {
+            width: 80%;
+            height: 50px;
+            border-radius: 30px;
+        }
+        
+        .bag {
+            width: 10%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            color: #999999;
+            font-family: sans-serif;
+        }
+        
+        .bag:hover {
+            color: black;
+        }
+        
+        .sign {
+            width: 10%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            color: #999999;
+            font-family: sans-serif;
+        }
+        
+        .sign:hover {
+            color: black;
+        }
+        
+        .card {
+            width: 10%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            color: #999999;
+            font-family: sans-serif;
+        }
+        
+        .card:hover {
+            color: black;
+        }
+        /*-----------------------------------------------------------------------------------------------------------------------------*/
+        
+        .extraspace {
+            height: 8rem;
+            width: 100%;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!---------------------------navbar------------------------------------------------>
+
+    <div class="nav-container">
+        <div class="logo">
+            <img src="https://static.startuptalky.com/2020/05/fraazo-logo-startuptalky.jpg" alt="" class="main_logo">
+        </div>
+        <div class="locat">
+            <i class="fa-solid fa-location-dot">
+            </i>pawai
+        </div>
+        <div class="search">
+            <input type="text" class="button" placeholder="Find fresh vegetables,Fruits and Dairy.">
+        </div>
+        <div class="card">
+            <i class="fa-solid fa-credit-card-front"></i>Credit
+        </div>
+        <div class="bag">
+            <a href="addcart.html"><i class="fa-solid fa-cart-shopping"></i>Cart</a>
+
+
+        </div>
+        <div class="sign">
+            <a href="sign-up.html"> <i class="fa-solid fa-user"></i>Login</a>
+        </div>
+    </div>
+    <hr>
+    <div class="extraspace"></div>
+
+    <div id="main2">
+
+        <div id="crtdiv">
+            <h2></h2>
+        </div>
+        <div id="crttable">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th class="a101">Description</th>
+                        <th class="a102">Price</th>
+                        <th class="a103"></th>
+                        <th class="a104">Total Price</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+    <!---end main2 div-->
+    <!----------------------------- for cart------------------------------------------------------>
+    <div id="main3">
+        <div id="container">
+
+
+        </div>
+        <!-- container div end-->
+        <div class="cart">
+            <div class="1">
+                <h4 class="same-phont">Items</h4>
+                <h4 id="num" class="same-phont"></h4>
+            </div>
+            <div class="2">
+                <h4 class="same-phont">Total</h4>
+                <h4 id="total" class="same-phont"></h4>
+            </div>
+
+            <div class="2">
+                <h4 class="same-phont" id="pay">Amount Payable</h4>
+                <h4 id="amt" class="same-phont"></h4>
+            </div>
+            <button onclick="window.location.href = 'payment.html'"> Check Out</button>
+
+        </div>
+    </div>
+    <!------main3 div end-->
+</body>
+
+</html>
+<script>
+    var cartArr = JSON.parse(localStorage.getItem("CartItems"))
+        // console.log(cartArr)
+    cartArr.map(function(data) {
+
+        var div = document.createElement("div");
+        div.setAttribute("Id", "flex")
+        var div1 = document.createElement("div");
+        div1.setAttribute("Id", "id1")
+        var image = document.createElement("img");
+        image.setAttribute("src", data.image);
+        div1.append(image)
+
+        var div2 = document.createElement("div");
+        div2.setAttribute("Id", "id2")
+        var name = document.createElement("p")
+        name.textContent = data.name
+        var wieght = document.createElement("p")
+        wieght.textContent = ` weight  ${data.wieght}`;
+        // wieght = ' weight ${weight}'
+        div2.append(name, wieght)
+        var div3 = document.createElement("div");
+        div3.setAttribute("Id", "id3")
+        var price2 = document.createElement("p");
+        price2.textContent = `₹ ${data.stprice}`;
+        var price = document.createElement("p");
+        price.textContent = `₹ ${data.price}`;
+        div3.append(price2, price)
+
+        div.append(div1, div2, div3)
+
+        document.querySelector("#container").append(div);
+
+    });
+    var cartTotal = cartArr.reduce(function(ac, cv) {
+        return ac + Number(cv.price)
+    }, 0);
+
+
+    document.querySelector("#total").textContent = `₹ ${cartTotal}`;
+    document.querySelector("#num").textContent = cartArr.length;
+    document.querySelector("#crtdiv").textContent = `Your Shopping Cart (${cartArr.length} Item)`
+
+
+    document.querySelector("#amt").textContent = `₹ ${cartTotal}`;
+</script>

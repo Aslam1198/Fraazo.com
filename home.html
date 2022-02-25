@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/343ca72674.js" crossorigin="anonymous"></script>
+    <style>
+        .nav-container {
+            width: 100%;
+            height: 80px;
+            display: grid;
+            grid-template-rows: 80px;
+            grid-template-columns: auto;
+            display: flex;
+            position: sticky;
+            position: fixed;
+            z-index: 1;
+            overflow: hidden;
+            background-color: white;
+        }
+        
+        .logo {
+            width: 19%;
+            height: 100%;
+        }
+        
+        .logo>img {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .locat {
+            width: 10%;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            font-size: 13px;
+            color: #999999;
+            font-family: sans-serif;
+        }
+        
+        .locat:hover {
+            color: black;
+        }
+        
+        .search {
+            width: 40%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .button {
+            width: 80%;
+            height: 50px;
+            border-radius: 30px;
+        }
+        
+        .bag {
+            width: 10%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            color: #999999;
+            font-family: sans-serif;
+        }
+        
+        .bag:hover {
+            color: black;
+        }
+        
+        .sign {
+            width: 10%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            color: #999999;
+            font-family: sans-serif;
+        }
+        
+        .sign:hover {
+            color: black;
+        }
+        
+        .card {
+            width: 10%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            color: #999999;
+            font-family: sans-serif;
+        }
+        
+        .card:hover {
+            color: black;
+        }
+        
+        .extraspace {
+            height: 8rem;
+            width: 100%;
+        }
+        /*------------------------------sliding div------------------------------------------------*/
+        
+        .slide-main {
+            width: 100%;
+            height: 450px;
+            display: flex;
+        }
+        
+        .slide-container {
+            position: relative;
+            width: 70%;
+            height: auto;
+        }
+        
+        .slide>img {
+            width: 90%;
+            height: 400px;
+            padding-left: 5%;
+        }
+        
+        .arrow {
+            cursor: pointer;
+            position: absolute;
+            top: 45%;
+            color: black;
+            background-color: aliceblue;
+            padding: 8px 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        .next {
+            right: 0px;
+        }
+        
+        .prev {
+            left: 0px;
+        }
+        
+        .slide {
+            display: none;
+        }
+        
+        .slide-side {
+            width: 30%;
+            display: flex;
+            flex-wrap: wrap;
+            padding-left: 10px;
+        }
+        
+        .slide-side img {
+            width: 90%;
+        }
+        /*-----------------heding-----------------------*/
+        /* [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] */
+        
+        .extraspace1 {
+            height: 5rem;
+            width: 100%;
+        }
+        
+        #container {
+            width: 90%;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 250px);
+            gap: 20px;
+            margin: 0% auto;
+        }
+        
+        .bci {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .home_btn {
+            margin: 0% auto;
+            height: 70px;
+            width: 85%;
+            background-color: grey;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+            display: flex;
+            border-radius: 40px;
+        }
+        
+        .Yellow {
+            color: white;
+            text-decoration: none;
+        }
+        /*-[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[-----[[[[[[[[[[[[[[[[-----*/
+        
+        * {
+            font-family: inherit;
+        }
+        
+        .mobilelogo {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 50% auto;
+            height: 700px;
+        }
+        
+        .mblpic {
+            margin: 30px;
+        }
+        
+        .mbl100 {
+            width: 100%;
+            height: 100%;
+        }
+        
+        #mobile100 {
+            height: 60px;
+            width: 70%;
+        }
+        
+        .submit100 {
+            height: 72px;
+            width: 70%;
+            background-color: #50d9b8;
+            border: none;
+        }
+        
+        .subcribe {
+            margin-left: 20px;
+            text-align: justify;
+        }
+        
+        .playstore {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            height: 100px;
+            width: 100%;
+            margin-top: 50px;
+        }
+        
+        #playstr {
+            height: 50px;
+            width: 200px;
+            border-radius: 20px;
+        }
+        
+        #main-footer {
+            width: 100%;
+            color: aliceblue;
+        }
+        
+        .footer-img {
+            width: 100%;
+            margin: auto;
+        }
+        
+        .footimg {
+            width: 100%;
+        }
+        
+        .footer-1 {
+            background-color: #165241;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 100px;
+            width: 100%;
+            justify-content: space-between;
+            margin-top: -30px;
+            padding-left: 20px;
+        }
+        
+        .flogo {
+            width: 200px;
+            height: 70px;
+        }
+        
+        .flogo>p {
+            font-size: 17px;
+        }
+        
+        .footer-2 {
+            width: 100%;
+            background-color: #165241;
+            margin-top: -30px;
+            padding: 0px 20px 0px 20px;
+            font-family: inherit;
+            text-align: justify;
+        }
+        
+        .last-text {
+            text-align: center;
+        }
+        
+        .f4img {
+            width: 200px;
+            height: 50px;
+        }
+        
+        .f3img {
+            width: 200px;
+            height: 30px;
+            border-radius: 25px;
+        }
+        
+        li {
+            list-style: none;
+            margin-top: 5px;
+            font-size: 15px;
+            /* line-gap-override: 5px; */
+        }
+        
+        li>a {
+            text-decoration: none;
+            color: aliceblue;
+            font-size: 17px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav-container">
+        <div class="logo">
+            <img src="https://static.startuptalky.com/2020/05/fraazo-logo-startuptalky.jpg" alt="" class="main_logo">
+        </div>
+        <div class="locat">
+            <i class="fa-solid fa-location-dot">
+                </i>pawai
+        </div>
+        <div class="search">
+            <input type="text" class="button" placeholder="Find fresh vegetables,Fruits and Dairy.">
+        </div>
+        <div class="card">
+            <i class="fa-solid fa-credit-card-front"></i>Credit
+        </div>
+        <div class="bag">
+            <a href="addcart.html"><i class="fa-solid fa-cart-shopping"></i>Cart</a>
+
+
+        </div>
+        <div class="sign">
+            <a href="sign-up.html"> <i class="fa-solid fa-user"></i>Login</a>
+        </div>
+    </div>
+
+
+    <div class="extraspace"></div>
+    <!---------------------------sliding ------------------------------------------->
+    <div class="slide-main">
+        <div class="slide-container ">
+            <div class="slide">
+                <img src="https://s3.ap-south-1.amazonaws.com/fraazo-prod/web_ban/1249.png?1645203230" alt="Image-1">
+
+            </div>
+            <div class="slide">
+                <img src="https://s3.ap-south-1.amazonaws.com/fraazo-prod/web_ban/1250.png?1645203332" alt="image-2">
+
+            </div>
+            <div class="slide">
+                <img src="https://s3.ap-south-1.amazonaws.com/fraazo-prod/web_ban/1251.png?1645203412
+
+            " alt="image-3">
+
+            </div>
+            <div class="slide">
+                <img src="https://s3.ap-south-1.amazonaws.com/fraazo-prod/web_ban/682.png?1643662856
+            " alt=" image-4 ">
+            </div>
+            <div class="slide">
+                <img src="https://s3.ap-south-1.amazonaws.com/fraazo-prod/web_ban/1243.png?1645200932
+            " alt=" image-5 ">
+            </div>
+            <div class="slide">
+                <img src="https://s3.ap-south-1.amazonaws.com/fraazo-prod/web_ban/1245.png?1645201045
+
+            " alt=" image-6 ">
+            </div>
+            <div class="slide">
+                <img src="https://s3.ap-south-1.amazonaws.com/fraazo-prod/web_ban/1248.png?1645203084
+
+            " alt=" image-7 ">
+            </div>
+            <div class="slide">
+                <img src="https://s3.ap-south-1.amazonaws.com/fraazo-prod/web_ban/1246.png?1645202820
+
+            " alt=" image-8 ">
+            </div>
+
+            <span class=" arrow prev " onclick="controller(-1) ">&#10094;</span>
+            <span class="arrow next " onclick="controller(1) ">&#10095;</span>
+
+        </div>
+        <div class="slide-side">
+            <div>
+                <img src="
+                https://fraazo.com/static/Web1-cafcda6bf22c11e6bbaed467d13a0eb7.png" alt="image-9">
+            </div>
+            <div>
+                <img src="
+                https://fraazo.com/static/Web2-9a152d86240414d76ce205c491e47c4e.png" alt="image-10">
+            </div>
+            <div>
+                <img src="         
+                https://fraazo.com/static/Web3-9f5a46f22ff99bcfe079257218356413.png " alt="image-9 ">
+            </div>
+        </div>
+    </div>
+
+    <hr>
+    <div class="extraspace1"></div>
+    <!-----------------------------------best deals------------------------------------->
+    <div id="container">
+        <div>
+            <div style="background-image: url(https://fraazo-master.s3.ap-south-1.amazonaws.com/webban/Vegetables.png
+            );" class="bci">
+                <div class="home_btn">
+                    <a href="vegetables.html" class="Yellow">Vegatables</a>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div style="background-image: url( https://fraazo-master.s3.ap-south-1.amazonaws.com/webban/Fruits.png
+
+            );" class="bci">
+                <div class="home_btn">
+                    <a href="Fruits.html" class="Yellow">Fruits</a>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div style="background-image: url(https://s3.ap-south-1.amazonaws.com/fraazo-prod/web/1.png?1619161151
+            );" class="bci">
+                <div class="home_btn">
+                    <a href="Herbs.html" class="Yellow">Herbs</a>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div style="background-image: url(https://s3.ap-south-1.amazonaws.com/fraazo-prod/web/201.png?1635224001
+
+            );" class="bci">
+                <div class="home_btn">
+                    <a href="Dry.html" class="Yellow">Dry Fruits</a>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div style="background-image: url(https://fraazo-master.s3.ap-south-1.amazonaws.com/webban/hydroponics_web.png
+
+            );" class="bci">
+                <div class="home_btn">
+                    <a href="Hydroponics.html" class="Yellow">Hydroponics</a>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div style="background-image: url(https://s3.ap-south-1.amazonaws.com/fraazo-prod/web/4.png?1638600349
+
+            );" class="bci">
+                <div class="home_btn">
+                    <a href="Dairy.html" class="Yellow ">Dairy Vegan</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="extraspace"></div>
+    <!---[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]-->
+
+    <div class="mobilelogo">
+        <div class="mblpic">
+
+            <img src="https://fraazo.com/static/app-screen-95bf468762091341a8e4bb213eeda2f8.png" alt="100" class="mbl100">
+        </div>
+        <div class="subcribe">
+            <h1>Download The App </h1>
+            <p>Enter your phone number to receive a text with a link to download the app</p>
+            <div>
+                <a href=""> <img src="https://www.freepnglogos.com/uploads/app-store-logo-png/google-play-and-apple-app-store-logos-22.png" alt="" class="f3img">
+            </div>
+            <input type="number" placeholder="please enter you mobile number" id="mobile100">
+            <p></p>
+            <input type="submit" value="Submit" class="submit100" />
+            <div class="playstore">
+                <p>Available On</p>
+
+                <a href=""> <img src="https://www.freepnglogos.com/uploads/app-store-logo-png/google-play-and-apple-app-store-logos-22.png" alt="" class="f4img">
+                </a>
+            </div>
+        </div>
+    </div>
+    <div id="main-footer">
+        <div class="footer-img">
+            <a href="#">
+                <img src="https://fraazo.com/static/footerDesign-26fcca451f726500fd06e7fc02d09cb4.svg" alt="" class="footimg"></a>
+        </div>
+        <div class="footer-1">
+            <div class="inner-foot">
+                <div>
+                    <a href="#"> <img src="data:image/png;base64,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"
+                            alt="" class="flogo"></a>
+                    <p>Order online vegetables & fruits directly from the farm. Fraazo is online platform that allows customer to get farm fresh produce directly from farmers.
+                    </p>
+                </div>
+
+            </div>
+            <div>
+                <ul>
+                    <li>
+                        <h3>Useful Links</h3>
+                    </li>
+                    <li>
+                        <a href="#">Privacy Policy </a>
+                    </li>
+                    <li>
+                        <a href="#">FAQ </a>
+                    </li>
+                    <li>
+                        <a href="#">Terms & Condition</a>
+                    </li>
+
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li>
+                        <h3>Cities We Serve</h3>
+                    </li>
+                    <li>
+                        <a href="#">Mumbai </a>
+                    </li>
+                    <li>
+                        <a href="#">Hydrabad </a>
+                    </li>
+                    <li><a href="#">Banglore </a></li>
+                    <li><a href="#">Delhi</a> </li>
+                    <li>
+                        <a href="#">Noida </a>
+                    </li>
+                    <li>
+                        <a href="#">Gurugram </a>
+                    </li>
+                    <li>
+                        <a href="#">Pune </a>
+                    </li>
+
+                </ul>
+            </div>
+            <div>
+                <h3>Connect With Us</h3>
+                <p><i class="fa-regular fa-envelope-open"></i>support@fraazo.com</p>
+                <p><i class="fa-solid fa-phone"></i>+91 9152291522</p>
+                <h3>Download The App</h3>
+                <div class="f4img">
+                    <a href=""> <img src="https://www.freepnglogos.com/uploads/app-store-logo-png/google-play-and-apple-app-store-logos-22.png" alt="" class="f4img">
+                    </a>
+                </div>
+            </div>
+
+        </div>
+        <div class="footer-2">
+            <h1>Fresh Fruits & Vegetables Grocery Shopping Online</h1>
+            <p>The quality of fruits & vegetables is synonymous with its freshness, while getting fresh fruits and vegetables is a tedious task at times but with Fraazo you can get it delivered at your doorstep. Fraazo brings a wide range of farm fresh fruits,
+                vegetables and dairy products to you, all in just a click. We currently serve about more than 3lacs+ happy customers in Mumbai, Navi Mumbai, Thane, Kalyan-Dombivli and Virar. Fraazo has made online shopping of fresh produce much easier
+                with its hassle-free home delivery options. You can choose the delivery slot as per your choice and schedule your order accordingly. Or you can simply opt for the option of 90 mins Express Delivery and get your order delivered in not more
+                than 90 mins. The farm fresh fruits and vegetables on Fraazo are available at best prices compared to other vendors & supermarkets. Plus with so many exciting offers, one can save up to 20% on their Monthly grocery budgets. No need to
+                wait in long queues in crowded supermarkets or local mandis for getting the best prices on veggies. Kick the stress out & just Fraazo your dose of freshness with savings at the comfort of your home. Fraazo directly sources fresh fruits
+                and veggies from an extensive network of farmers across Maharashtra, hence bringing you fresh produce straight from farm to table in less than 18 hours. With our Safe & Hygienic packaging and minimal multiple handling, we ensure you get
+                the best quality fresh produce.</p>
+            <p>The fruits and vegetables are 100% hand-picked fresh from farm, while some products are hydroponically-grown. The wide range of fruits and veggies on Fraazo include more than 100+ farm fresh vegetables and fruits, starting from regular veggies
+                like dudhi, cauliflower, beetroot, cabbage, etc. to exotic veggies like broccoli, lettuce etc. We also provide the essential vegetable combos like Onion, Potato, Tomato Combo, Salad Combo, Fresh Cut-Veg Combos or Fruit Combos like Banana,
+                Apple Combo, & more. There are a lot of exciting deals on vegetables & fruits, every day of the week, the major highlights being Monday Mandi, Veggie Wednesday, Freelivery Thursday & Fruit Friday.For payments, you can choose from the multiple
+                payment options as Fraazo accepts Debit card, Credit card, UPI options like iMobile, Google Pay, 8+ e-Wallet options like Phonepe, JioPay, MobiKwik, Sodexo, NetBanking and Cash on Delivery (COD). If you ever have an issue with missing
+                items or any quality issue, you can raise your concern with us in 48 hrs & we shall refund/ replace your product with “no-questions-asked-policy”. You can simply connect with our Customer Support team via Chat Support or Call on 9152291522.</p>
+            <hr>
+            <p class="last-text">@ Copyrights 2021-2022. Fraazo. All Rights Reserved.</p>
+        </div>
+
+    </div>
+</body>
+
+</html>
+<script>
+    var flag = 2;
+
+    function controller(x) {
+        flag += x;
+        slidshow(flag);
+    }
+    slidshow(flag);
+
+    function slidshow(num) {
+
+        var slides = document.getElementsByClassName("slide ");
+        if (num == slides.length) {
+            flag = 0;
+            num = 0;
+        }
+        if (num < 0) {
+            flag = slides.length - 1;
+            num = slides.length - 1;
+
+        }
+        for (let y of slides) {
+            y.style.display = "none ";
+        }
+
+        //console.log(slides)
+        slides[num].style.display = "block ";
+    }
+</script>
